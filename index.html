@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Borderfall</title>
+<meta name="theme-color" content="#0a1114">
+<link rel="icon" href="./icons/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="claude:viewport-fit-sides" content="cover">
+  <script type="module" crossorigin src="./assets/index-BSDNQL-c.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DIEM-PfX.css">
+<link rel="manifest" href="./manifest.webmanifest"></head>
+<body>
+<canvas id="cv"></canvas>
+<div id="vig"></div>
+<div id="flash"></div>
+
+<div id="hud" hidden>
+  <div id="top">
+    <div id="who" class="pan" role="button" tabindex="0"><i></i><div><b>Commander</b><small id="whoSub">YOUR NATION</small></div></div>
+    <div class="stat pan"><span class="k">Gold</span><span class="v" id="sGold">0</span></div>
+    <div class="stat pan" title="Active troops / maximum your population can support"><span class="k">Troops</span><span class="v" id="sTroops">0</span><span class="sub" id="sClim"></span></div>
+    <div class="stat pan"><span class="k">Land</span><span class="v" id="sLand">0%</span></div>
+    <div class="stat pan opt" title="People living in your territory"><span class="k">Population</span><span class="v" id="sPop">0</span></div>
+    <div class="stat pan opt"><span class="k">Conquered</span><span class="v" id="sKills">0</span></div>
+    <div class="spacer"></div>
+    <button id="rankPill" class="pan" title="Leaderboard" aria-label="Open leaderboard" aria-expanded="false"><span class="k">Rank</span><b id="rankN">#1</b></button>
+    <div id="eraBox" class="pan" hidden><span id="eraYear" class="num"></span><button id="bResearch" hidden></button></div>
+    <div id="timer" class="pan num"><span id="clock">00:00</span><small id="season"></small></div>
+    <button id="bMenu" class="pan" title="Menu" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <div class="ctl pan">
+      <button id="bClim" title="Climate and shelter view (K)">Climate</button>
+      <button id="bPause" title="Pause (P)">Pause</button>
+      <button id="bSound" title="Sound (M)">Sound</button>
+      <button id="bSet" title="Settings">Settings</button>
+      <button id="bExit">Exit</button>
+    </div>
+  </div>
+  <div id="board" class="pan sheet"><div class="shHead"><b>Leaderboard</b><button class="shX" data-close aria-label="Close">✕</button></div><h4><span>LEADERBOARD</span><span>LAND · TROOPS</span></h4><ol id="boardList"></ol><div id="hunt" hidden><h4><span id="huntT">RIVALS LEFT</span><button id="huntNext" title="Fly to the next rival (F)">Find next · F</button></h4><ol id="huntList"></ol></div></div>
+  <div id="setSheet" class="pan sheet" hidden><div class="shHead"><b>Settings</b><button class="shX" data-close aria-label="Close">✕</button></div>
+    <div class="shBody">
+      <label class="srow"><span>Volume</span><input id="hVol" type="range" min="0" max="100" aria-label="Master volume"></label>
+      <div class="srow"><span>Effects</span><div class="seg" id="hQ"><button data-v="high">Cinematic</button><button data-v="low">Performance</button></div></div>
+      <div class="srow"><span>Screen shake</span><div class="seg" id="hShake"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="srow"><span>Weather</span><div class="seg" id="hWx"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="srow"><span>Voice</span><div class="seg" id="hVoice"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="srow"><span>My songs</span><div class="libRow"><span class="libInfo">No songs saved on this device</span><button class="libClear" disabled>Clear my songs</button></div></div>
+    </div>
+  </div>
+  <div id="netHud" class="pan" hidden><div class="nhHead"><b id="nhTitle">Online</b><span id="nhPing" class="num"></span><button id="nhChatB" aria-expanded="false" title="Quick chat (Enter)">Chat</button></div><ol id="nhList"></ol><div id="nhChat" class="qchat" hidden></div></div>
+  <div id="feed"></div>
+  <div id="toasts"></div>
+  <div id="spawn" class="pan" hidden><b>Choose your landing</b><span id="spawnSub">Click any open land · 9s</span></div>
+  <div id="hint" class="pan" hidden></div>
+  <div id="climLegend" class="pan" hidden><b id="climSeason"></b><span><i style="background:#96c8ff"></i>Cold<span class="lx">: frostbite</span></span><span><i style="background:#ff691e"></i>Desert<span class="lx">: heatstroke</span></span><span><i style="background:#eccd60"></i>Tropical<span class="lx"> heat (mild)</span></span><span><i style="background:#78dc8c"></i>Mild</span><span><i style="border:1.5px dashed #7bc67e"></i><span class="lx">Your </span>shelter</span></div>
+  <div id="banner"><div class="bt"></div><div class="bs"></div></div>
+  <div id="bottom">
+    <div id="ratio" class="pan">
+      <div class="row"><span class="lbl">Attack force</span><b id="ratioV">30%</b><button id="attBadge" hidden aria-label="Active attacks" aria-expanded="false"><span id="attN">0</span>&nbsp;active</button></div>
+      <input id="ratioR" type="range" min="5" max="100" step="5" value="30" aria-label="Attack ratio">
+      <div id="atts"></div>
+    </div>
+    <button id="bBuild" class="pan" aria-label="Build and weapons" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V10l7-5 7 5v10M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Build</span></button>
+    <div id="build" class="pan sheet" data-tab="b"><div class="shHead"><div class="tabs" role="tablist"><button data-tab="b" role="tab" aria-selected="true">Buildings</button><button data-tab="w" role="tab" aria-selected="false">Weapons</button></div><button id="bPaint" aria-pressed="false" title="Drag over your land to paint the selected building">Paint</button><button class="shX" data-close aria-label="Close">✕</button></div><div id="buildItems"></div></div>
+  </div>
+  <div id="radio">
+    <canvas id="rArt" width="128" height="128" aria-hidden="true"></canvas>
+    <div class="rInfo">
+      <div class="rStation"><span id="rEq" class="eq off" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="rStation">Borderfall FM</span></div>
+      <b id="rTitle">No songs loaded</b>
+      <span id="rArtist">Press + to add your music</span>
+      <div class="rProg"><i id="rBar"></i></div>
+      <div class="rCtl">
+        <button id="rPrev" class="rb" title="Previous song" aria-label="Previous song"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5.5v13L9.5 12zM5 5.5h3.5v13H5z"/></svg></button>
+        <button id="rPlay" class="rb big" title="Play or pause" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
+        <button id="rNext" class="rb skip" title="Skip song (.)" aria-label="Skip song"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5v13l9.5-6.5zM15.5 5.5H19v13h-3.5z"/></svg><span>Skip</span></button>
+        <span class="rVolW" title="Radio volume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4z"/><path d="M15 9a4 4 0 0 1 0 6M17.5 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="rVol" type="range" min="0" max="100" aria-label="Radio volume"></span>
+        <button id="rAdd" class="rb" title="Add songs from your device" aria-label="Add songs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg></button>
+        <button id="rDel" class="rb" title="Remove this song from your device" aria-label="Remove song" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6l1 2h4v2H4V6h4zM6 9h12l-1 11H7z"/></svg></button>
+        <input id="rFile" type="file" accept="audio/*,.mp3,.m4a,.ogg,.wav,.flac" multiple hidden>
+      </div>
+    </div>
+    <button id="rMin" class="rb" title="Collapse" aria-label="Collapse player"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</div>
+<div id="radial"></div>
+<div id="tip" class="pan" hidden></div>
+<div id="loading" hidden><b>Charting the world…</b></div>
+<div id="netOv" hidden><div class="box pan" role="alertdialog" aria-labelledby="noT"><h2 id="noT"></h2><p id="noS"></p><div class="spin" id="noSpin" aria-hidden="true"></div><button class="mbtn primary" id="noOk">Main menu</button></div></div>
+<div id="over" hidden><div class="box pan"><h2 id="oT">Victory</h2><div id="oS" style="color:var(--dim)"></div><div class="st"><div><b id="o1">0</b><span>Peak land</span></div><div><b id="o2">0</b><span>Nations taken</span></div><div><b id="o3">0</b><span>Time</span></div></div><button class="mbtn primary" id="oCont" hidden>Continue playing <small>Finish off the rest</small></button><button class="mbtn" id="oAgain">Play again</button><button class="mbtn" id="oWatch">Keep watching</button><button class="mbtn" id="oMenu">Main menu</button></div></div>
+
+<div id="menu">
+  <div class="mwrap">
+    <div class="brand"><h1>BORDER<span>FALL</span></h1><p>Land, expand and conquer a living world. Every border is a front line.</p></div>
+    <div id="scrMain" class="screen">
+      <button class="mbtn primary" data-go="scrSolo">Single player <small>vs AI nations</small></button>
+      <button class="mbtn" data-go="scrOnline" id="goOnline">Play online <small>Friends on other devices</small></button>
+      <button class="mbtn" data-go="scrParty">Same screen <small>Party hot-seat</small></button>
+      <button class="mbtn" data-go="scrHow">How to play <small>Controls &amp; rules</small></button>
+      <button class="mbtn" data-go="scrSet">Settings <small>Sound &amp; effects</small></button>
+    </div>
+    <div id="scrSolo" class="screen" hidden>
+      <button class="back" data-go="scrMain">← Back</button>
+      <h2 class="sh">Single player</h2>
+      <div class="field"><label for="soloName">Nation name</label><input id="soloName" class="inp" maxlength="16" value="Free State"></div>
+      <div class="field"><span class="lbl">Banner color</span><div class="chips" id="soloColors"></div></div>
+      <div class="field"><span class="lbl">Map</span><div class="seg" data-opt="map"><button data-v="continents" aria-pressed="true">Continents</button><button data-v="pangaea">Pangaea</button><button data-v="archipelago">Archipelago</button><button data-v="earth">Earth</button></div></div>
+      <div class="field" data-earth hidden><span class="lbl">Earth start</span><div class="seg" data-opt="estart"><button data-v="capitals" aria-pressed="true">Real nations</button><button data-v="borders">Real borders</button></div><p class="note" data-n="capitals">The biggest real countries start in their homelands. You land anywhere you like.</p><p class="note" data-n="borders" hidden>The most populous countries begin with their true territory. You pick a country to lead. The AI nations setting decides how many countries take part (about 170 maximum); the rest is open land.</p></div>
+      <div class="field"><span class="lbl">Era</span><div class="seg" data-opt="era"><button data-v="modern" aria-pressed="true">Modern</button><button data-v="ww2">WWII · 1939</button><button data-v="ww1">WWI · 1914</button></div><p class="note" id="eraNote"></p></div>
+      <div class="field"><span class="lbl">Year length</span><div class="seg" data-opt="year"><button data-v="10">10 min</button><button data-v="20" aria-pressed="true">20 min</button><button data-v="40">40 min</button></div><p class="note">Real minutes per game year. Winter (December to February in the north, June to August in the south) makes cold land deadly; summer makes it mild.</p></div>
+      <div class="field"><span class="lbl">Map size</span><div class="seg" data-opt="size"><button data-v="small">Small</button><button data-v="medium" aria-pressed="true">Medium</button><button data-v="large">Large</button></div></div>
+      <div class="field"><span class="lbl">AI difficulty</span><div class="seg" data-opt="diff"><button data-v="easy">Easy</button><button data-v="normal" aria-pressed="true">Normal</button><button data-v="hard">Hard</button></div></div>
+      <div class="field"><span class="lbl">AI nations</span><div class="seg" data-opt="nations"><button data-v="10" aria-pressed="false">10</button><button data-v="50" aria-pressed="true">50</button><button data-v="90" aria-pressed="false">90</button><button data-v="100" aria-pressed="false">100</button><button data-v="150" aria-pressed="false">150</button><button data-v="200" aria-pressed="false">200</button></div></div>
+      <button class="mbtn primary" id="startSolo">Deploy <small>Start match</small></button>
+    </div>
+    <div id="scrParty" class="screen" hidden>
+      <button class="back" data-go="scrMain">← Back</button>
+      <h2 class="sh">Party lobby</h2>
+      <p class="note">Commanders share this screen. Press <b>Tab</b> (or tap your name in the top bar) to hand command to the next player. To play on separate devices, use <b>Play online</b>.</p>
+      <div id="partyList" style="display:flex;flex-direction:column;gap:8px"></div>
+      <button class="mbtn" id="addCmdr">+ Add commander <small>up to 4</small></button>
+      <div class="field"><span class="lbl">Map</span><div class="seg" data-opt="map"><button data-v="continents" aria-pressed="true">Continents</button><button data-v="pangaea">Pangaea</button><button data-v="archipelago">Archipelago</button><button data-v="earth">Earth</button></div></div>
+      <div class="field" data-earth hidden><span class="lbl">Earth start</span><div class="seg" data-opt="estart"><button data-v="capitals" aria-pressed="true">Real nations</button><button data-v="borders">Real borders</button></div><p class="note" data-n="capitals">The biggest real countries start in their homelands. You land anywhere you like.</p><p class="note" data-n="borders" hidden>All ~170 countries begin with their true territory. You pick a country to lead. The AI nations slider is ignored.</p></div>
+      <div class="field"><span class="lbl">AI difficulty</span><div class="seg" data-opt="diff"><button data-v="easy">Easy</button><button data-v="normal" aria-pressed="true">Normal</button><button data-v="hard">Hard</button></div></div>
+      <div class="field"><span class="lbl">AI nations</span><div class="seg" data-opt="nations"><button data-v="10" aria-pressed="false">10</button><button data-v="50" aria-pressed="true">50</button><button data-v="90" aria-pressed="false">90</button><button data-v="100" aria-pressed="false">100</button><button data-v="150" aria-pressed="false">150</button><button data-v="200" aria-pressed="false">200</button></div></div>
+      <div class="field"><span class="lbl">Era</span><div class="seg" data-opt="era"><button data-v="modern" aria-pressed="true">Modern</button><button data-v="ww2">WWII · 1939</button><button data-v="ww1">WWI · 1914</button></div><p class="note" id="eraNoteParty"></p></div>
+      <div class="field"><span class="lbl">Year length</span><div class="seg" data-opt="year"><button data-v="10">10 min</button><button data-v="20" aria-pressed="true">20 min</button><button data-v="40">40 min</button></div><p class="note">Real minutes per game year. Winter (December to February in the north, June to August in the south) makes cold land deadly; summer makes it mild.</p></div>
+      <button class="mbtn primary" id="startParty">Start party match</button>
+    </div>
+    <div id="scrOnline" class="screen" hidden>
+      <button class="back" data-go="scrMain">← Back</button>
+      <h2 class="sh">Play online</h2>
+      <p class="note">Play with friends on their own phones and computers. One of you creates a game and shares the code; everyone else joins with it.</p>
+      <div class="field"><label for="onName">Your name</label><input id="onName" class="inp" maxlength="16" autocomplete="nickname" spellcheck="false" value=""></div>
+      <div class="field"><span class="lbl">Your color</span><div class="chips" id="onColors"></div></div>
+      <button class="mbtn primary" id="onGoCreate">Create game <small>You host, friends join</small></button>
+      <button class="mbtn" id="onGoJoin">Join with code <small>6-letter room code</small></button>
+      <button class="mbtn" id="onGoPublic">Public games <small>Join anyone's open game</small></button>
+    </div>
+    <div id="scrCreate" class="screen" hidden>
+      <button class="back" data-go="scrOnline">← Back</button>
+      <h2 class="sh">Create game</h2>
+      <div class="field"><span class="lbl">Mode</span><div class="seg" data-opt="mode"><button data-v="rivals" aria-pressed="true">Rivals</button><button data-v="coop">Co-op</button></div><p class="note" data-m="rivals">Every player leads their own nation. Ally, betray or send troops to each other; AI nations fill the rest of the world.</p><p class="note" data-m="coop" hidden>Everyone commands one shared nation together. Any of you can attack, build or launch; the feed shows who did what.</p></div>
+      <div class="field"><span class="lbl">Map</span><div class="seg" data-opt="map"><button data-v="continents" aria-pressed="true">Continents</button><button data-v="pangaea">Pangaea</button><button data-v="archipelago">Archipelago</button><button data-v="earth">Earth</button></div></div>
+      <div class="field" data-earth hidden><span class="lbl">Earth start</span><div class="seg" data-opt="estart"><button data-v="capitals" aria-pressed="true">Real nations</button><button data-v="borders">Real borders</button></div><p class="note" data-n="capitals">The biggest real countries start in their homelands. You land anywhere you like.</p><p class="note" data-n="borders" hidden>Countries begin with their true territory. Each player picks a country to lead.</p></div>
+      <div class="field"><span class="lbl">Era</span><div class="seg" data-opt="era"><button data-v="modern" aria-pressed="true">Modern</button><button data-v="ww2">WWII · 1939</button><button data-v="ww1">WWI · 1914</button></div></div>
+      <div class="field"><span class="lbl">Map size</span><div class="seg" data-opt="size"><button data-v="small">Small</button><button data-v="medium" aria-pressed="true">Medium</button><button data-v="large">Large</button></div></div>
+      <div class="field"><span class="lbl">AI difficulty</span><div class="seg" data-opt="diff"><button data-v="easy">Easy</button><button data-v="normal" aria-pressed="true">Normal</button><button data-v="hard">Hard</button></div></div>
+      <div class="field"><span class="lbl">AI nations</span><div class="seg" data-opt="nations"><button data-v="0">None</button><button data-v="10">10</button><button data-v="25" aria-pressed="true">25</button><button data-v="50">50</button><button data-v="100">100</button></div></div>
+      <div class="field"><span class="lbl">Who can join</span><div class="seg" data-opt="pub"><button data-v="0" aria-pressed="true">Friends with the code</button><button data-v="1">Public</button></div><p class="note">Public games are listed for anyone under Public games.</p></div>
+      <p class="err" id="createErr" role="alert" hidden></p>
+      <button class="mbtn primary" id="onCreate">Create room <small>Up to 8 players</small></button>
+    </div>
+    <div id="scrJoin" class="screen" hidden>
+      <button class="back" data-go="scrOnline">← Back</button>
+      <h2 class="sh">Join with code</h2>
+      <div class="field"><label for="joinCode">Room code</label><input id="joinCode" class="inp code" maxlength="7" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC234" inputmode="text"></div>
+      <p class="err" id="joinErr" role="alert" hidden></p>
+      <button class="mbtn primary" id="onJoin">Join game</button>
+    </div>
+    <div id="scrPublic" class="screen" hidden>
+      <button class="back" data-go="scrOnline">← Back</button>
+      <h2 class="sh">Public games</h2>
+      <p class="note" id="pubNote">Looking for open games…</p>
+      <div id="pubList" class="pubList"></div>
+    </div>
+    <div id="scrLobby" class="screen" hidden>
+      <button class="back" id="lbLeave">← Leave</button>
+      <h2 class="sh">Lobby</h2>
+      <div class="lbCodeBox"><span class="lbl">Room code</span><b id="lbCode" class="num">······</b>
+        <div class="row lbShare"><button class="sbtn" id="lbCopy">Copy link</button><button class="sbtn" id="lbShare" hidden>Share</button><button class="sbtn" id="lbCopyCode">Copy code</button></div></div>
+      <p class="lbInfo" id="lbInfo"></p>
+      <div id="lbPlayers" class="lbPlayers"></div>
+      <button class="mbtn" id="lbReady" hidden>Ready <small>Tell the host you're set</small></button>
+      <button class="mbtn primary" id="lbStart" hidden>Start match <small id="lbStartSub"></small></button>
+      <p class="note" id="lbStatus" role="status"></p>
+      <div class="field" id="lbModeF" hidden><span class="lbl">Mode</span><div class="seg" id="lbMode"><button data-v="rivals">Rivals</button><button data-v="coop">Co-op</button></div></div>
+      <div class="field"><span class="lbl">Quick chat</span><div class="chatLog" id="lbLog"></div><div class="qchat" id="lbChat"></div></div>
+    </div>
+    <div id="scrHow" class="screen" hidden>
+      <button class="back" data-go="scrMain">← Back</button>
+      <h2 class="sh">Field manual</h2>
+      <div class="how">
+        <div><b>Land</b><span>Click open land at the start to drop your capital.</span></div>
+        <div><b>Expand</b><span>Click any land you don't own. The attack force slider sets what share of your troops goes. Sea targets launch a transport.</span></div>
+        <div><b>Build</b><span>Click your own land, or pick from the bar (keys 1–7). Cities raise troop cap, factories make gold, ports run trade ships.</span></div>
+        <div><b>Defend</b><span>Defense posts triple capture cost nearby. SAM sites shoot down incoming missiles.</span></div>
+        <div><b>Armies</b><span>Real countries start with their real estimated active-duty troops (China about 2 million, the US 1.3 million, the UK 144,000). Your troop cap comes from the population you control, plus cities and housing.</span></div>
+        <div><b>Terrain</b><span>Plains are fastest. Forest, jungle, highlands, desert, tundra and especially mountains slow an advance, cost more troops and favour the defender. Hover any land to see its terrain, temperature and population.</span></div>
+        <div><b>Climate</b><span>Troops in freezing or desert land die of frostbite or heatstroke unless a City or Housing nearby shelters them. Press K for the climate view showing danger zones and your shelter.</span></div>
+        <div><b>Stacking</b><span>Build on top of one of your own buildings to stack it: each level adds its full effect. Hold Shift and drag across your land to paint buildings; hold still to keep stacking.</span></div>
+        <div><b>Railways</b><span>Cities, ports and factories link up by rail automatically. Every train that reaches a City or Port pays $2,000 ($1,000 at a factory). Enemies cut lines by taking the land under them.</span></div>
+        <div><b>Nations</b><span>Many real countries have traits from their history, like the United Kingdom's Royal Navy, Spain's Armada and Conquistadors, Russia's General Winter and Germany's Blitzkrieg. Hover a country to see it.</span></div>
+        <div><b>Strike</b><span>Silos launch atom (N), hydrogen (H), MIRV (V) and Tsar Bomba (T) missiles. Bigger warheads cost far more and reload slower. Factories unlock airstrikes (A) that carve holes in enemy lines.</span></div>
+        <div><b>Diplomacy</b><span>Right-click a nation to propose or break an alliance, or send troops to allies. Breaking one marks you a traitor.</span></div>
+        <div><b>Hunt</b><span>When 20 or fewer rivals remain (or after you continue past victory) a Rivals panel, map markers and edge arrows appear. Click a name or press F to fly to the next one.</span></div>
+        <div><b>Camera</b><span>Drag to pan, wheel or pinch to zoom, Space to recenter. Esc cancels, Q/E nudges the force slider, P pauses.</span></div>
+        <div><b>Win</b><span>Hold 80% of the land, or be the last nation standing.</span></div>
+      </div>
+    </div>
+    <div id="scrSet" class="screen" hidden>
+      <button class="back" data-go="scrMain">← Back</button>
+      <h2 class="sh">Settings</h2>
+      <div class="field"><div class="row" style="justify-content:space-between"><label for="setVol">Master volume</label><b id="setVolV" class="num">70</b></div><input id="setVol" type="range" min="0" max="100"></div>
+      <div class="field"><span class="lbl">Music</span><div class="seg" id="setMusic"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="field"><span class="lbl">Effects quality</span><div class="seg" id="setQ"><button data-v="high">Cinematic</button><button data-v="low">Performance</button></div></div>
+      <div class="field"><span class="lbl">Screen shake</span><div class="seg" id="setShake"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="field"><span class="lbl">Clouds &amp; weather</span><div class="seg" id="setWx"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="field"><span class="lbl">Voice announcer</span><div class="seg" id="setVoice"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+      <div class="field"><span class="lbl">My songs</span><div class="libRow"><span class="libInfo">No songs saved on this device</span><button class="libClear" disabled>Clear my songs</button></div></div>
+    </div>
+    <div class="foot">An original game inspired by the territory-conquest genre of OpenFront.</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1498 @@
+{
+ "generated": "2026-10-21",
+ "assets": [
+  {
+   "id": "soldier_modern",
+   "label": "Modern rifleman",
+   "era": "modern",
+   "eras": null,
+   "kind": "soldier",
+   "file": "models/soldier_modern.glb",
+   "bytes": 112352,
+   "gzipBytes": 58978,
+   "tris": [
+    1859,
+    296,
+    79
+   ],
+   "verts": [
+    1263,
+    235,
+    99
+   ],
+   "budgets": [
+    2000,
+    300,
+    80
+   ],
+   "overBudget": [],
+   "clips": {
+    "walk": {
+     "frames": 10,
+     "fps": 10,
+     "loop": true,
+     "duration": 1,
+     "events": {}
+    },
+    "run": {
+     "frames": 8,
+     "fps": 12,
+     "loop": true,
+     "duration": 0.6667,
+     "events": {}
+    },
+    "fire": {
+     "frames": 8,
+     "fps": 10,
+     "loop": true,
+     "duration": 0.8,
+     "events": {
+      "shot": [
+       0.1,
+       0.3,
+       0.5
+      ]
+     }
+    },
+    "die": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    },
+    "die2": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    }
+   },
+   "destroy": null,
+   "parts": {}
+  },
+  {
+   "id": "soldier_ww1",
+   "label": "WWI rifleman",
+   "era": "ww1",
+   "eras": null,
+   "kind": "soldier",
+   "file": "models/soldier_ww1.glb",
+   "bytes": 106460,
+   "gzipBytes": 53243,
+   "tris": [
+    1909,
+    282,
+    79
+   ],
+   "verts": [
+    1303,
+    227,
+    99
+   ],
+   "budgets": [
+    2000,
+    300,
+    80
+   ],
+   "overBudget": [],
+   "clips": {
+    "walk": {
+     "frames": 10,
+     "fps": 10,
+     "loop": true,
+     "duration": 1,
+     "events": {}
+    },
+    "run": {
+     "frames": 8,
+     "fps": 12,
+     "loop": true,
+     "duration": 0.6667,
+     "events": {}
+    },
+    "fire": {
+     "frames": 8,
+     "fps": 10,
+     "loop": true,
+     "duration": 0.8,
+     "events": {
+      "shot": [
+       0.1
+      ]
+     }
+    },
+    "die": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    },
+    "die2": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    }
+   },
+   "destroy": null,
+   "parts": {}
+  },
+  {
+   "id": "soldier_ww2",
+   "label": "WWII rifleman",
+   "era": "ww2",
+   "eras": null,
+   "kind": "soldier",
+   "file": "models/soldier_ww2.glb",
+   "bytes": 104776,
+   "gzipBytes": 52215,
+   "tris": [
+    1817,
+    298,
+    79
+   ],
+   "verts": [
+    1237,
+    243,
+    99
+   ],
+   "budgets": [
+    2000,
+    300,
+    80
+   ],
+   "overBudget": [],
+   "clips": {
+    "walk": {
+     "frames": 10,
+     "fps": 10,
+     "loop": true,
+     "duration": 1,
+     "events": {}
+    },
+    "run": {
+     "frames": 8,
+     "fps": 12,
+     "loop": true,
+     "duration": 0.6667,
+     "events": {}
+    },
+    "fire": {
+     "frames": 8,
+     "fps": 10,
+     "loop": true,
+     "duration": 0.8,
+     "events": {
+      "shot": [
+       0.1
+      ]
+     }
+    },
+    "die": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    },
+    "die2": {
+     "frames": 14,
+     "fps": 12,
+     "loop": false,
+     "duration": 1.0833,
+     "events": {}
+    }
+   },
+   "destroy": null,
+   "parts": {}
+  },
+  {
+   "id": "tank_modern_mbt",
+   "label": "Modern main battle tank",
+   "era": "modern",
+   "eras": null,
+   "kind": "tank",
+   "file": "models/tank_modern_mbt.glb",
+   "bytes": 114680,
+   "gzipBytes": 49845,
+   "tris": [
+    4292,
+    792,
+    172
+   ],
+   "verts": [
+    3155,
+    588,
+    116
+   ],
+   "budgets": [
+    4500,
+    800,
+    200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/tank_modern_mbt_fractured.glb",
+    "bytes": 254708,
+    "gzipBytes": 142726,
+    "policy": "wreck",
+    "chunks": 22,
+    "sourceLod": 1,
+    "fracTris": 2509,
+    "dmgTris": 2088,
+    "ruinTris": [
+     3846,
+     751,
+     147
+    ],
+    "fracBudget": 6438,
+    "over": []
+   },
+   "parts": {
+    "turret": "yaw",
+    "gun": "pitch"
+   }
+  },
+  {
+   "id": "tank_ww1_rhomboid",
+   "label": "WWI rhomboid heavy tank",
+   "era": "ww1",
+   "eras": null,
+   "kind": "tank",
+   "file": "models/tank_ww1_rhomboid.glb",
+   "bytes": 94952,
+   "gzipBytes": 38235,
+   "tris": [
+    3730,
+    764,
+    176
+   ],
+   "verts": [
+    2912,
+    484,
+    128
+   ],
+   "budgets": [
+    4500,
+    800,
+    200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/tank_ww1_rhomboid_fractured.glb",
+    "bytes": 261372,
+    "gzipBytes": 158613,
+    "policy": "wreck",
+    "chunks": 16,
+    "sourceLod": 1,
+    "fracTris": 3122,
+    "dmgTris": 2779,
+    "ruinTris": [
+     3779,
+     792,
+     197
+    ],
+    "fracBudget": 5595,
+    "over": []
+   },
+   "parts": {
+    "gun_l": "yaw",
+    "gun_r": "yaw"
+   }
+  },
+  {
+   "id": "tank_ww2_medium",
+   "label": "WWII medium tank",
+   "era": "ww2",
+   "eras": null,
+   "kind": "tank",
+   "file": "models/tank_ww2_medium.glb",
+   "bytes": 112836,
+   "gzipBytes": 51022,
+   "tris": [
+    4342,
+    764,
+    186
+   ],
+   "verts": [
+    3032,
+    508,
+    124
+   ],
+   "budgets": [
+    4500,
+    800,
+    200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/tank_ww2_medium_fractured.glb",
+    "bytes": 255708,
+    "gzipBytes": 151390,
+    "policy": "wreck",
+    "chunks": 19,
+    "sourceLod": 1,
+    "fracTris": 2280,
+    "dmgTris": 1892,
+    "ruinTris": [
+     4290,
+     776,
+     194
+    ],
+    "fracBudget": 6513,
+    "over": []
+   },
+   "parts": {
+    "turret": "yaw",
+    "gun": "pitch"
+   }
+  },
+  {
+   "id": "plane_modern_jet",
+   "label": "Modern multirole jet",
+   "era": "modern",
+   "eras": null,
+   "kind": "plane",
+   "file": "models/plane_modern_jet.glb",
+   "bytes": 60748,
+   "gzipBytes": 40484,
+   "tris": [
+    2921,
+    540,
+    135
+   ],
+   "verts": [
+    1862,
+    322,
+    104
+   ],
+   "budgets": [
+    3200,
+    550,
+    150
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/plane_modern_jet_fractured.glb",
+    "bytes": 157984,
+    "gzipBytes": 97292,
+    "policy": "crash",
+    "chunks": 19,
+    "sourceLod": 1,
+    "fracTris": 2003,
+    "dmgTris": 1663,
+    "ruinTris": [
+     798,
+     219,
+     143
+    ],
+    "fracBudget": 4381,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "plane_ww1_biplane",
+   "label": "WWI biplane fighter",
+   "era": "ww1",
+   "eras": null,
+   "kind": "plane",
+   "file": "models/plane_ww1_biplane.glb",
+   "bytes": 79428,
+   "gzipBytes": 45084,
+   "tris": [
+    3027,
+    517,
+    150
+   ],
+   "verts": [
+    2239,
+    359,
+    122
+   ],
+   "budgets": [
+    3200,
+    550,
+    150
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/plane_ww1_biplane_fractured.glb",
+    "bytes": 152376,
+    "gzipBytes": 83721,
+    "policy": "crash",
+    "chunks": 19,
+    "sourceLod": 1,
+    "fracTris": 1457,
+    "dmgTris": 1181,
+    "ruinTris": [
+     1209,
+     411,
+     144
+    ],
+    "fracBudget": 4540,
+    "over": []
+   },
+   "parts": {
+    "prop": "spin"
+   }
+  },
+  {
+   "id": "plane_ww2_bomber",
+   "label": "WWII heavy bomber",
+   "era": "ww2",
+   "eras": null,
+   "kind": "plane",
+   "file": "models/plane_ww2_bomber.glb",
+   "bytes": 107620,
+   "gzipBytes": 59690,
+   "tris": [
+    4466,
+    798,
+    195
+   ],
+   "verts": [
+    2940,
+    520,
+    152
+   ],
+   "budgets": [
+    4800,
+    800,
+    200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/plane_ww2_bomber_fractured.glb",
+    "bytes": 241292,
+    "gzipBytes": 125622,
+    "policy": "crash",
+    "chunks": 27,
+    "sourceLod": 1,
+    "fracTris": 2056,
+    "dmgTris": 1779,
+    "ruinTris": [
+     1608,
+     437,
+     191
+    ],
+    "fracBudget": 6699,
+    "over": []
+   },
+   "parts": {
+    "prop1": "spin",
+    "prop2": "spin",
+    "prop3": "spin",
+    "prop4": "spin"
+   }
+  },
+  {
+   "id": "plane_ww2_fighter",
+   "label": "WWII fighter",
+   "era": "ww2",
+   "eras": null,
+   "kind": "plane",
+   "file": "models/plane_ww2_fighter.glb",
+   "bytes": 72560,
+   "gzipBytes": 42434,
+   "tris": [
+    2797,
+    550,
+    150
+   ],
+   "verts": [
+    1811,
+    335,
+    108
+   ],
+   "budgets": [
+    3200,
+    550,
+    150
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/plane_ww2_fighter_fractured.glb",
+    "bytes": 174528,
+    "gzipBytes": 102238,
+    "policy": "crash",
+    "chunks": 21,
+    "sourceLod": 1,
+    "fracTris": 1977,
+    "dmgTris": 1540,
+    "ruinTris": [
+     929,
+     276,
+     143
+    ],
+    "fracBudget": 4195,
+    "over": []
+   },
+   "parts": {
+    "prop": "spin"
+   }
+  },
+  {
+   "id": "ship_any_battleship",
+   "label": "Battleship",
+   "era": "any",
+   "eras": [
+    "ww1",
+    "ww2"
+   ],
+   "kind": "ship",
+   "file": "models/ship_any_battleship.glb",
+   "bytes": 190420,
+   "gzipBytes": 81998,
+   "tris": [
+    8316,
+    1330,
+    342
+   ],
+   "verts": [
+    6917,
+    933,
+    255
+   ],
+   "budgets": [
+    9000,
+    1500,
+    350
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/ship_any_battleship_fractured.glb",
+    "bytes": 457884,
+    "gzipBytes": 256350,
+    "policy": "sink",
+    "chunks": 40,
+    "sourceLod": 1,
+    "fracTris": 3861,
+    "dmgTris": 3472,
+    "ruinTris": [
+     6610,
+     1485,
+     335
+    ],
+    "fracBudget": 12474,
+    "over": []
+   },
+   "parts": {
+    "turret1": "yaw",
+    "turret1_gun": "pitch",
+    "turret2": "yaw",
+    "turret2_gun": "pitch",
+    "turret3": "yaw",
+    "turret3_gun": "pitch",
+    "turret4": "yaw",
+    "turret4_gun": "pitch"
+   }
+  },
+  {
+   "id": "ship_any_transport",
+   "label": "Troop transport",
+   "era": "any",
+   "eras": [
+    "ww1",
+    "ww2"
+   ],
+   "kind": "ship",
+   "file": "models/ship_any_transport.glb",
+   "bytes": 140372,
+   "gzipBytes": 64740,
+   "tris": [
+    6118,
+    1064,
+    260
+   ],
+   "verts": [
+    5595,
+    689,
+    184
+   ],
+   "budgets": [
+    7500,
+    1300,
+    300
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/ship_any_transport_fractured.glb",
+    "bytes": 395876,
+    "gzipBytes": 205565,
+    "policy": "sink",
+    "chunks": 40,
+    "sourceLod": 1,
+    "fracTris": 3897,
+    "dmgTris": 3542,
+    "ruinTris": [
+     5630,
+     918,
+     287
+    ],
+    "fracBudget": 9177,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "ship_modern_container",
+   "label": "Container ship",
+   "era": "modern",
+   "eras": null,
+   "kind": "ship",
+   "file": "models/ship_modern_container.glb",
+   "bytes": 158316,
+   "gzipBytes": 64207,
+   "tris": [
+    7010,
+    1268,
+    244
+   ],
+   "verts": [
+    9526,
+    1218,
+    180
+   ],
+   "budgets": [
+    7500,
+    1300,
+    300
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/ship_modern_container_fractured.glb",
+    "bytes": 390556,
+    "gzipBytes": 204114,
+    "policy": "sink",
+    "chunks": 40,
+    "sourceLod": 1,
+    "fracTris": 4672,
+    "dmgTris": 4138,
+    "ruinTris": [
+     3829,
+     1264,
+     296
+    ],
+    "fracBudget": 10515,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "train_any_steam_loco",
+   "label": "Steam locomotive with tender",
+   "era": "any",
+   "eras": [
+    "ww1",
+    "ww2"
+   ],
+   "kind": "train",
+   "file": "models/train_any_steam_loco.glb",
+   "bytes": 100124,
+   "gzipBytes": 47274,
+   "tris": [
+    3828,
+    658,
+    178
+   ],
+   "verts": [
+    3058,
+    523,
+    196
+   ],
+   "budgets": [
+    4000,
+    700,
+    180
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/train_any_steam_loco_fractured.glb",
+    "bytes": 278828,
+    "gzipBytes": 141562,
+    "policy": "wreck",
+    "chunks": 33,
+    "sourceLod": 1,
+    "fracTris": 2354,
+    "dmgTris": 2330,
+    "ruinTris": [
+     3824,
+     658,
+     172
+    ],
+    "fracBudget": 5742,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "train_any_wagon",
+   "label": "Covered goods wagon",
+   "era": "any",
+   "eras": [
+    "ww1",
+    "ww2",
+    "modern"
+   ],
+   "kind": "train",
+   "file": "models/train_any_wagon.glb",
+   "bytes": 47452,
+   "gzipBytes": 17042,
+   "tris": [
+    1408,
+    244,
+    44
+   ],
+   "verts": [
+    1220,
+    224,
+    40
+   ],
+   "budgets": [
+    1500,
+    250,
+    60
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/train_any_wagon_fractured.glb",
+    "bytes": 132772,
+    "gzipBytes": 51205,
+    "policy": "wreck",
+    "chunks": 22,
+    "sourceLod": 1,
+    "fracTris": 684,
+    "dmgTris": 641,
+    "ruinTris": [
+     1476,
+     244,
+     57
+    ],
+    "fracBudget": 2112,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_any_apartment",
+   "label": "Apartment block",
+   "era": "any",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_any_apartment.glb",
+   "bytes": 35772,
+   "gzipBytes": 12229,
+   "tris": [
+    1330,
+    248,
+    40
+   ],
+   "verts": [
+    2024,
+    412,
+    56
+   ],
+   "budgets": [
+    1500,
+    250,
+    40
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_any_apartment_fractured.glb",
+    "bytes": 104544,
+    "gzipBytes": 49201,
+    "policy": "collapse",
+    "chunks": 18,
+    "sourceLod": 1,
+    "fracTris": 1134,
+    "dmgTris": 925,
+    "ruinTris": [
+     748,
+     240,
+     38
+    ],
+    "fracBudget": 1995,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_any_church",
+   "label": "Church",
+   "era": "any",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_any_church.glb",
+   "bytes": 34512,
+   "gzipBytes": 16528,
+   "tris": [
+    1209,
+    225,
+    44
+   ],
+   "verts": [
+    1414,
+    282,
+    55
+   ],
+   "budgets": [
+    1600,
+    280,
+    50
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_any_church_fractured.glb",
+    "bytes": 128532,
+    "gzipBytes": 59572,
+    "policy": "collapse",
+    "chunks": 25,
+    "sourceLod": 1,
+    "fracTris": 1109,
+    "dmgTris": 887,
+    "ruinTris": [
+     799,
+     269,
+     48
+    ],
+    "fracBudget": 1813,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_any_house_a",
+   "label": "Two-storey house",
+   "era": "any",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_any_house_a.glb",
+   "bytes": 26768,
+   "gzipBytes": 11408,
+   "tris": [
+    848,
+    128,
+    30
+   ],
+   "verts": [
+    1020,
+    200,
+    42
+   ],
+   "budgets": [
+    1000,
+    160,
+    30
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_any_house_a_fractured.glb",
+    "bytes": 72276,
+    "gzipBytes": 33957,
+    "policy": "collapse",
+    "chunks": 12,
+    "sourceLod": 1,
+    "fracTris": 680,
+    "dmgTris": 560,
+    "ruinTris": [
+     494,
+     128,
+     28
+    ],
+    "fracBudget": 1272,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_any_house_b",
+   "label": "Cottage",
+   "era": "any",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_any_house_b.glb",
+   "bytes": 24800,
+   "gzipBytes": 11568,
+   "tris": [
+    766,
+    124,
+    28
+   ],
+   "verts": [
+    848,
+    188,
+    34
+   ],
+   "budgets": [
+    1000,
+    160,
+    30
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_any_house_b_fractured.glb",
+    "bytes": 70016,
+    "gzipBytes": 33082,
+    "policy": "collapse",
+    "chunks": 12,
+    "sourceLod": 1,
+    "fracTris": 571,
+    "dmgTris": 526,
+    "ruinTris": [
+     410,
+     104,
+     27
+    ],
+    "fracBudget": 1149,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_modern_skyscraper",
+   "label": "Skyscraper (modern glass)",
+   "era": "modern",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_modern_skyscraper.glb",
+   "bytes": 41980,
+   "gzipBytes": 16588,
+   "tris": [
+    1624,
+    328,
+    59
+   ],
+   "verts": [
+    2076,
+    444,
+    60
+   ],
+   "budgets": [
+    2000,
+    350,
+    60
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_modern_skyscraper_fractured.glb",
+    "bytes": 149424,
+    "gzipBytes": 68942,
+    "policy": "collapse",
+    "chunks": 28,
+    "sourceLod": 1,
+    "fracTris": 1325,
+    "dmgTris": 1085,
+    "ruinTris": [
+     1320,
+     344,
+     56
+    ],
+    "fracBudget": 2436,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_ww1_skyscraper",
+   "label": "Skyscraper (1910s masonry)",
+   "era": "ww1",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_ww1_skyscraper.glb",
+   "bytes": 39480,
+   "gzipBytes": 12812,
+   "tris": [
+    1538,
+    311,
+    58
+   ],
+   "verts": [
+    2576,
+    545,
+    61
+   ],
+   "budgets": [
+    2000,
+    350,
+    60
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_ww1_skyscraper_fractured.glb",
+    "bytes": 169628,
+    "gzipBytes": 74682,
+    "policy": "collapse",
+    "chunks": 26,
+    "sourceLod": 0,
+    "fracTris": 2071,
+    "dmgTris": 1653,
+    "ruinTris": [
+     1249,
+     342,
+     58
+    ],
+    "fracBudget": 2307,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "bld_ww2_skyscraper",
+   "label": "Skyscraper (1930s Art Deco)",
+   "era": "ww2",
+   "eras": null,
+   "kind": "building",
+   "file": "models/bld_ww2_skyscraper.glb",
+   "bytes": 43312,
+   "gzipBytes": 13918,
+   "tris": [
+    1806,
+    216,
+    59
+   ],
+   "verts": [
+    2588,
+    288,
+    60
+   ],
+   "budgets": [
+    2000,
+    350,
+    60
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/bld_ww2_skyscraper_fractured.glb",
+    "bytes": 178076,
+    "gzipBytes": 80657,
+    "policy": "collapse",
+    "chunks": 23,
+    "sourceLod": 0,
+    "fracTris": 2444,
+    "dmgTris": 2013,
+    "ruinTris": [
+     1370,
+     350,
+     60
+    ],
+    "fracBudget": 2709,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_any_town",
+   "label": "Town (Lv2-3)",
+   "era": "any",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_any_town.glb",
+   "bytes": 327720,
+   "gzipBytes": 140460,
+   "tris": [
+    13792,
+    2277,
+    595
+   ],
+   "verts": [
+    15818,
+    2884,
+    877
+   ],
+   "budgets": [
+    15000,
+    2500,
+    600
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_any_town_fractured.glb",
+    "bytes": 927348,
+    "gzipBytes": 511499,
+    "policy": "collapse",
+    "chunks": 37,
+    "sourceLod": 0,
+    "fracTris": 17101,
+    "dmgTris": 16483,
+    "ruinTris": [
+     7167,
+     2263,
+     576
+    ],
+    "fracBudget": 20688,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_any_village",
+   "label": "Village (Lv1)",
+   "era": "any",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_any_village.glb",
+   "bytes": 166132,
+   "gzipBytes": 90364,
+   "tris": [
+    6212,
+    1040,
+    299
+   ],
+   "verts": [
+    6709,
+    1359,
+    415
+   ],
+   "budgets": [
+    7500,
+    1300,
+    300
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_any_village_fractured.glb",
+    "bytes": 529768,
+    "gzipBytes": 315205,
+    "policy": "collapse",
+    "chunks": 33,
+    "sourceLod": 0,
+    "fracTris": 8119,
+    "dmgTris": 8018,
+    "ruinTris": [
+     3633,
+     993,
+     288
+    ],
+    "fracBudget": 9318,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_modern_city",
+   "label": "City (Lv4-6, modern)",
+   "era": "modern",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_modern_city.glb",
+   "bytes": 417616,
+   "gzipBytes": 168298,
+   "tris": [
+    19218,
+    3024,
+    857
+   ],
+   "verts": [
+    26640,
+    4075,
+    1076
+   ],
+   "budgets": [
+    22000,
+    3800,
+    900
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_modern_city_fractured.glb",
+    "bytes": 999232,
+    "gzipBytes": 488276,
+    "policy": "collapse",
+    "chunks": 28,
+    "sourceLod": 0,
+    "fracTris": 19676,
+    "dmgTris": 15984,
+    "ruinTris": [
+     10786,
+     2761,
+     864
+    ],
+    "fracBudget": 28827,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_modern_metropolis",
+   "label": "Metropolis (Lv7+, modern)",
+   "era": "modern",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_modern_metropolis.glb",
+   "bytes": 561000,
+   "gzipBytes": 203294,
+   "tris": [
+    26526,
+    4750,
+    1078
+   ],
+   "verts": [
+    38259,
+    6585,
+    1187
+   ],
+   "budgets": [
+    30000,
+    5000,
+    1200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_modern_metropolis_fractured.glb",
+    "bytes": 1370568,
+    "gzipBytes": 669368,
+    "policy": "collapse",
+    "chunks": 40,
+    "sourceLod": 0,
+    "fracTris": 30495,
+    "dmgTris": 21622,
+    "ruinTris": [
+     14408,
+     3708,
+     1152
+    ],
+    "fracBudget": 39789,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_ww1_city",
+   "label": "City (Lv4-6, 1910s)",
+   "era": "ww1",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_ww1_city.glb",
+   "bytes": 410440,
+   "gzipBytes": 157719,
+   "tris": [
+    18994,
+    2649,
+    866
+   ],
+   "verts": [
+    26952,
+    3958,
+    1087
+   ],
+   "budgets": [
+    22000,
+    3800,
+    900
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_ww1_city_fractured.glb",
+    "bytes": 992960,
+    "gzipBytes": 461638,
+    "policy": "collapse",
+    "chunks": 28,
+    "sourceLod": 0,
+    "fracTris": 18812,
+    "dmgTris": 16470,
+    "ruinTris": [
+     10466,
+     2687,
+     864
+    ],
+    "fracBudget": 28491,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_ww1_metropolis",
+   "label": "Metropolis (Lv7+, 1910s)",
+   "era": "ww1",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_ww1_metropolis.glb",
+   "bytes": 471800,
+   "gzipBytes": 164156,
+   "tris": [
+    23136,
+    4614,
+    1067
+   ],
+   "verts": [
+    35936,
+    7418,
+    1186
+   ],
+   "budgets": [
+    30000,
+    5000,
+    1200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_ww1_metropolis_fractured.glb",
+    "bytes": 1183788,
+    "gzipBytes": 562230,
+    "policy": "collapse",
+    "chunks": 40,
+    "sourceLod": 0,
+    "fracTris": 23662,
+    "dmgTris": 19122,
+    "ruinTris": [
+     14691,
+     3610,
+     1152
+    ],
+    "fracBudget": 34704,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_ww2_city",
+   "label": "City (Lv4-6, 1930s)",
+   "era": "ww2",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_ww2_city.glb",
+   "bytes": 408312,
+   "gzipBytes": 154905,
+   "tris": [
+    18476,
+    2978,
+    899
+   ],
+   "verts": [
+    25524,
+    4111,
+    1108
+   ],
+   "budgets": [
+    22000,
+    3800,
+    900
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_ww2_city_fractured.glb",
+    "bytes": 976032,
+    "gzipBytes": 464639,
+    "policy": "collapse",
+    "chunks": 28,
+    "sourceLod": 0,
+    "fracTris": 18214,
+    "dmgTris": 15690,
+    "ruinTris": [
+     10622,
+     2761,
+     864
+    ],
+    "fracBudget": 27714,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "city_ww2_metropolis",
+   "label": "Metropolis (Lv7+, 1930s)",
+   "era": "ww2",
+   "eras": null,
+   "kind": "city",
+   "file": "models/city_ww2_metropolis.glb",
+   "bytes": 515204,
+   "gzipBytes": 176308,
+   "tris": [
+    25020,
+    4422,
+    1177
+   ],
+   "verts": [
+    37814,
+    6110,
+    1256
+   ],
+   "budgets": [
+    30000,
+    5000,
+    1200
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": {
+    "file": "models/city_ww2_metropolis_fractured.glb",
+    "bytes": 1273676,
+    "gzipBytes": 601626,
+    "policy": "collapse",
+    "chunks": 40,
+    "sourceLod": 0,
+    "fracTris": 26133,
+    "dmgTris": 21150,
+    "ruinTris": [
+     14498,
+     3718,
+     1152
+    ],
+    "fracBudget": 37530,
+    "over": []
+   },
+   "parts": {}
+  },
+  {
+   "id": "prop_any_flag",
+   "label": "Team flag",
+   "era": "any",
+   "eras": null,
+   "kind": "prop",
+   "file": "models/prop_any_flag.glb",
+   "bytes": 14800,
+   "gzipBytes": 7082,
+   "tris": [
+    236,
+    40,
+    10
+   ],
+   "verts": [
+    384,
+    72,
+    14
+   ],
+   "budgets": [
+    240,
+    40,
+    10
+   ],
+   "overBudget": [],
+   "clips": null,
+   "destroy": null,
+   "parts": {}
+  }
+ ]
+}

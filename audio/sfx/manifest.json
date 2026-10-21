@@ -1,0 +1,160 @@
+{
+ "version": 1,
+ "model": "ElevenLabs sound generation (API default model)",
+ "clips": {
+  "explosion-1": {
+   "file": "explosion-1.mp3",
+   "seconds": 2.48
+  },
+  "explosion-2": {
+   "file": "explosion-2.mp3",
+   "seconds": 2.48
+  },
+  "explosion-3": {
+   "file": "explosion-3.mp3",
+   "seconds": 2
+  },
+  "nuke": {
+   "file": "nuke.mp3",
+   "seconds": 6
+  },
+  "launch": {
+   "file": "launch.mp3",
+   "seconds": 3
+  },
+  "siren": {
+   "file": "siren.mp3",
+   "seconds": 5
+  },
+  "artillery": {
+   "file": "artillery.mp3",
+   "seconds": 3
+  },
+  "machine-gun": {
+   "file": "machine-gun.mp3",
+   "seconds": 1.48
+  },
+  "tank": {
+   "file": "tank.mp3",
+   "seconds": 3
+  },
+  "jet": {
+   "file": "jet.mp3",
+   "seconds": 3
+  },
+  "propeller": {
+   "file": "propeller.mp3",
+   "seconds": 3.48
+  },
+  "ship-horn": {
+   "file": "ship-horn.mp3",
+   "seconds": 3
+  },
+  "steam-train": {
+   "file": "steam-train.mp3",
+   "seconds": 3.48
+  },
+  "war-horn": {
+   "file": "war-horn.mp3",
+   "seconds": 3
+  },
+  "victory": {
+   "file": "victory.mp3",
+   "seconds": 4
+  },
+  "defeat": {
+   "file": "defeat.mp3",
+   "seconds": 4
+  },
+  "coins": {
+   "file": "coins.mp3",
+   "seconds": 1
+  },
+  "alliance": {
+   "file": "alliance.mp3",
+   "seconds": 2
+  },
+  "betrayal": {
+   "file": "betrayal.mp3",
+   "seconds": 2.48
+  },
+  "splash": {
+   "file": "splash.mp3",
+   "seconds": 1.48
+  },
+  "construction": {
+   "file": "construction.mp3",
+   "seconds": 2
+  },
+  "battle-bed": {
+   "file": "battle-bed.mp3",
+   "seconds": 15,
+   "loop": true
+  }
+ },
+ "play": {
+  "explosion": [
+   "explosion-1",
+   "explosion-2",
+   "explosion-3"
+  ],
+  "intercept": [
+   "explosion-3"
+  ],
+  "nuke": [
+   "nuke"
+  ],
+  "launch": [
+   "launch"
+  ],
+  "siren": [
+   "siren"
+  ],
+  "bomb": [
+   "artillery"
+  ],
+  "battle": [
+   "machine-gun"
+  ],
+  "spawn": [
+   "tank"
+  ],
+  "plane": [
+   "jet",
+   "propeller"
+  ],
+  "boat": [
+   "ship-horn"
+  ],
+  "train": [
+   "steam-train"
+  ],
+  "war": [
+   "war-horn"
+  ],
+  "victory": [
+   "victory"
+  ],
+  "conquer": [
+   "victory"
+  ],
+  "defeat": [
+   "defeat"
+  ],
+  "coin": [
+   "coins"
+  ],
+  "ally": [
+   "alliance"
+  ],
+  "betray": [
+   "betrayal"
+  ],
+  "splash": [
+   "splash"
+  ],
+  "build": [
+   "construction"
+  ]
+ }
+}

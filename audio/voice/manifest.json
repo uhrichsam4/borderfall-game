@@ -1,0 +1,257 @@
+{
+ "version": 1,
+ "model": "eleven_multilingual_v2",
+ "voices": {
+  "commander": "Adam (ElevenLabs premade)",
+  "radio": "Daniel (ElevenLabs premade)"
+ },
+ "lines": {
+  "spawn": {
+   "files": [
+    "spawn-1.mp3",
+    "spawn-2.mp3",
+    "spawn-3.mp3"
+   ],
+   "afterName": false
+  },
+  "pick": {
+   "files": [
+    "pick-1.mp3",
+    "pick-2.mp3"
+   ],
+   "afterName": true
+  },
+  "start": {
+   "files": [
+    "start-1.mp3",
+    "start-2.mp3",
+    "start-3.mp3",
+    "start-4.mp3"
+   ],
+   "afterName": false
+  },
+  "war": {
+   "files": [
+    "war-1.mp3",
+    "war-2.mp3"
+   ],
+   "afterName": true
+  },
+  "warOn": {
+   "files": [
+    "warOn-1.mp3",
+    "warOn-2.mp3"
+   ],
+   "afterName": true
+  },
+  "nukeOut": {
+   "files": [
+    "nukeOut-1.mp3",
+    "nukeOut-2.mp3",
+    "nukeOut-3.mp3",
+    "nukeOut-4.mp3"
+   ],
+   "afterName": false
+  },
+  "nukeIn": {
+   "files": [
+    "nukeIn-1.mp3"
+   ],
+   "afterName": true
+  },
+  "tsar": {
+   "files": [
+    "tsar-1.mp3",
+    "tsar-2.mp3"
+   ],
+   "afterName": false
+  },
+  "mirv": {
+   "files": [
+    "mirv-1.mp3",
+    "mirv-2.mp3"
+   ],
+   "afterName": false
+  },
+  "intercept": {
+   "files": [
+    "intercept-1.mp3",
+    "intercept-2.mp3",
+    "intercept-3.mp3"
+   ],
+   "afterName": false
+  },
+  "air": {
+   "files": [
+    "air-1.mp3",
+    "air-2.mp3",
+    "air-3.mp3"
+   ],
+   "afterName": false
+  },
+  "airIn": {
+   "files": [
+    "airIn-1.mp3",
+    "airIn-2.mp3"
+   ],
+   "afterName": false
+  },
+  "landing": {
+   "files": [
+    "landing-1.mp3",
+    "landing-2.mp3",
+    "landing-3.mp3"
+   ],
+   "afterName": false
+  },
+  "invaded": {
+   "files": [
+    "invaded-1.mp3",
+    "invaded-2.mp3"
+   ],
+   "afterName": false
+  },
+  "repelled": {
+   "files": [
+    "repelled-1.mp3",
+    "repelled-2.mp3"
+   ],
+   "afterName": false
+  },
+  "conquer": {
+   "files": [
+    "conquer-1.mp3",
+    "conquer-2.mp3"
+   ],
+   "afterName": true
+  },
+  "ally": {
+   "files": [
+    "ally-1.mp3",
+    "ally-2.mp3"
+   ],
+   "afterName": true
+  },
+  "betrayed": {
+   "files": [
+    "betrayed-1.mp3",
+    "betrayed-2.mp3"
+   ],
+   "afterName": true
+  },
+  "cold": {
+   "files": [
+    "cold-1.mp3",
+    "cold-2.mp3",
+    "cold-3.mp3"
+   ],
+   "afterName": false
+  },
+  "heat": {
+   "files": [
+    "heat-1.mp3",
+    "heat-2.mp3"
+   ],
+   "afterName": false
+  },
+  "rail": {
+   "files": [
+    "rail-1.mp3",
+    "rail-2.mp3",
+    "rail-3.mp3"
+   ],
+   "afterName": false
+  },
+  "victory": {
+   "files": [
+    "victory-1.mp3",
+    "victory-2.mp3",
+    "victory-3.mp3"
+   ],
+   "afterName": false
+  },
+  "domination": {
+   "files": [
+    "domination-1.mp3",
+    "domination-2.mp3"
+   ],
+   "afterName": false
+  },
+  "defeat": {
+   "files": [
+    "defeat-1.mp3",
+    "defeat-2.mp3",
+    "defeat-3.mp3"
+   ],
+   "afterName": false
+  },
+  "lowgold": {
+   "files": [
+    "lowgold-1.mp3"
+   ],
+   "afterName": false
+  }
+ },
+ "names": {
+  "China": "name-china.mp3",
+  "India": "name-india.mp3",
+  "United States of America": "name-united-states-of-america.mp3",
+  "Indonesia": "name-indonesia.mp3",
+  "Pakistan": "name-pakistan.mp3",
+  "Brazil": "name-brazil.mp3",
+  "Nigeria": "name-nigeria.mp3",
+  "Bangladesh": "name-bangladesh.mp3",
+  "Russia": "name-russia.mp3",
+  "Mexico": "name-mexico.mp3",
+  "Japan": "name-japan.mp3",
+  "Ethiopia": "name-ethiopia.mp3",
+  "Philippines": "name-philippines.mp3",
+  "Egypt": "name-egypt.mp3",
+  "Vietnam": "name-vietnam.mp3",
+  "Dem. Rep. Congo": "name-dem-rep-congo.mp3",
+  "Turkey": "name-turkey.mp3",
+  "Germany": "name-germany.mp3",
+  "Iran": "name-iran.mp3",
+  "Thailand": "name-thailand.mp3",
+  "France": "name-france.mp3",
+  "United Kingdom": "name-united-kingdom.mp3",
+  "Italy": "name-italy.mp3",
+  "South Africa": "name-south-africa.mp3",
+  "Tanzania": "name-tanzania.mp3",
+  "Myanmar": "name-myanmar.mp3",
+  "Kenya": "name-kenya.mp3",
+  "South Korea": "name-south-korea.mp3",
+  "Colombia": "name-colombia.mp3",
+  "Spain": "name-spain.mp3",
+  "Argentina": "name-argentina.mp3",
+  "Ukraine": "name-ukraine.mp3",
+  "Uganda": "name-uganda.mp3",
+  "Algeria": "name-algeria.mp3",
+  "Sudan": "name-sudan.mp3",
+  "Iraq": "name-iraq.mp3",
+  "Afghanistan": "name-afghanistan.mp3",
+  "Poland": "name-poland.mp3",
+  "Canada": "name-canada.mp3",
+  "Morocco": "name-morocco.mp3",
+  "Saudi Arabia": "name-saudi-arabia.mp3",
+  "Uzbekistan": "name-uzbekistan.mp3",
+  "Peru": "name-peru.mp3",
+  "Malaysia": "name-malaysia.mp3",
+  "Angola": "name-angola.mp3",
+  "Ghana": "name-ghana.mp3",
+  "Mozambique": "name-mozambique.mp3",
+  "Yemen": "name-yemen.mp3",
+  "Nepal": "name-nepal.mp3",
+  "Venezuela": "name-venezuela.mp3",
+  "Madagascar": "name-madagascar.mp3",
+  "Cameroon": "name-cameroon.mp3",
+  "Côte d'Ivoire": "name-co-te-d-ivoire.mp3",
+  "North Korea": "name-north-korea.mp3",
+  "Australia": "name-australia.mp3",
+  "Taiwan": "name-taiwan.mp3",
+  "Niger": "name-niger.mp3",
+  "Sri Lanka": "name-sri-lanka.mp3",
+  "Burkina Faso": "name-burkina-faso.mp3",
+  "Mali": "name-mali.mp3"
+ }
+}
